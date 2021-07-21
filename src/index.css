@@ -1,0 +1,61 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Robto:wght@300;&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap');
+body {
+  background-color: rgb(217, 224, 245);
+  font-family: 'STIX Two Math', serif;
+}
+
+h2 {
+  letter-spacing: 1px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.home {
+  max-width: 400px;
+  margin: 3em auto;
+  border: 1px solid #888;
+  text-align: center;
+  padding: 20px;
+  background: rgb(72, 72, 73);
+  color: #fff;
+  letter-spacing: 0.2px;
+}
+
+input {
+  width: 98%;
+  padding: 2% 1%;
+  outline-color: grey;
+  border-radius: 5px;
+}
+
+h3 {
+  color: rgb(10, 180, 10);
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.err {
+  color: yellow;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 20px;
+}
+
+#space {
+  height: 30px
+}
+
+table {
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 2px solid #888;
+  border-collapse: collapse;
+}
+
+td {
+  color: yellow;
+}
