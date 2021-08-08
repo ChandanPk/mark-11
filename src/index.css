@@ -5,7 +5,81 @@ body {
   font-family: 'STIX Two Math', serif;
 }
 
-h2 {
+.home {
+  background-color: rgb(92, 187, 15);
+  max-width: 500px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5rem;
+  border: 1px solid rgb(101, 167, 211);
+  padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* h2 {
   letter-spacing: 1px;
   font-family: 'Roboto', sans-serif;
 }
@@ -58,4 +132,4 @@ table, th, td {
 
 td {
   color: yellow;
-}
+} */
