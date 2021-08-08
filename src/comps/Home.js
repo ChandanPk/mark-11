@@ -12,6 +12,7 @@ const Home = () => {
     const [bill, setBill] = useState();
     const [given, setGiven] = useState();
     const [visibility, setVisibility] = useState();
+    const [result, setResult] = useState();
 
 
     const handleChange = (e)=> {
@@ -25,6 +26,7 @@ const Home = () => {
     }
 
     const handleClick = ()=> {
+
         if (bill > 0) {
             setVisibility(true);
             setErr(null);
@@ -45,147 +47,66 @@ const Home = () => {
                    returnAmt = returnAmt % amounts[i];
                 }
             }
-                setCurrencies(currencies);
+        }else {
+            setErr2(true);
         }
+
+        setCurrencies(currencies);
+        setResult(true);
+        setErr2(null);
     }
-
-    console.log(currencies);
-        
-    
-    
-    
-    
-        //     if (given > bill) {          
-    //         returnAmt = bill - given;
-
-    //         for(let i = 0; i < amounts.length; i++){
-
-    //             if (returnAmt >= amounts[i]){
-    //                 for (let j = 1; returnAmt >= amounts[i]; j++){
-    //                     returnAmt = returnAmt - amounts[i];
-    //                     currencies[j] = j;
-    //                 } 
-    //             }
-                
-    //             if (i === 5){                                       
-    //                 for (let i = 0; i<= 5; i++){
-    //                     console.log(currencies[i]);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-
 
 
     return ( 
         <div className="home">
             <h2>Cash Register Manager</h2>
-            <p>Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
+            <p className="instruc">Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
             <h3>Bill Amount:</h3>
             <input type="number" onChange={(e)=> {handleChange(e)}}/>
-            {err && <p>please enter a valid amount</p>}
+            {err && <p className="err">please enter a valid amount</p>}
             <button onClick={handleClick}>Next</button>
 
             { visibility && 
             <>
             <h3>Given cash:</h3>
             <input type="number" onChange={(e)=> {handleChange2(e)}}/>
-            {err2 && <p>enter a valid amount which is greter than bill</p>}
+            {err2 && <p className="err">enter a valid amount which is greater than bill</p>}
             <button onClick={handleEvaluation}>evaluate</button>
             </> }
+
+            { result &&
+           <table style={{width: "100%"}}>
+             <tbody>
+
+                <tr>
+                    <td>No. of Notes</td>
+                    <td>{ currencies[0] }</td>
+                    <td>{ currencies[1] }</td>
+                    <td>{ currencies[2] }</td>
+                    <td>{ currencies[3] }</td>
+                    <td>{ currencies[4] }</td>
+                    <td>{ currencies[5] }</td>
+               </tr>
+
+               <tr>
+                    <td>Note</td>
+                    <td>2000</td>
+                    <td>500</td>
+                    <td>100</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>1</td>
+               </tr>
+               </tbody>
+           </table>
+           }
 
         </div>
      );
 }
  
 export default Home;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -334,34 +255,34 @@ export default Home;
 //             </>
 //            }
 
-//            { result &&
-//            <table style={{width: "100%"}}>
-//              <tbody>
+        //    { result &&
+        //    <table style={{width: "100%"}}>
+        //      <tbody>
 
-//                 <tr>
-//                     <td>No. of Notes</td>
-//                     <td>{ change.twoK }</td>
-//                     <td>{ change.fiveHun }</td>
-//                     <td>{ change.hundred }</td>
-//                     <td>{ change.twenty }</td>
-//                     <td>{ change.ten }</td>
-//                     <td>{ change.five }</td>
-//                     <td>{ change.one }</td>
-//                </tr>
+        //         <tr>
+        //             <td>No. of Notes</td>
+        //             <td>{ change.twoK }</td>
+        //             <td>{ change.fiveHun }</td>
+        //             <td>{ change.hundred }</td>
+        //             <td>{ change.twenty }</td>
+        //             <td>{ change.ten }</td>
+        //             <td>{ change.five }</td>
+        //             <td>{ change.one }</td>
+        //        </tr>
 
-//                <tr>
-//                     <td>Note</td>
-//                     <td>2000</td>
-//                     <td>500</td>
-//                     <td>100</td>
-//                     <td>20</td>
-//                     <td>10</td>
-//                     <td>5</td>
-//                     <td>1</td>
-//                </tr>
-//                </tbody>
-//            </table>
-//            }
+        //        <tr>
+        //             <td>Note</td>
+        //             <td>2000</td>
+        //             <td>500</td>
+        //             <td>100</td>
+        //             <td>20</td>
+        //             <td>10</td>
+        //             <td>5</td>
+        //             <td>1</td>
+        //        </tr>
+        //        </tbody>
+        //    </table>
+        //    }
 
 
 //         </div>
@@ -369,3 +290,46 @@ export default Home;
 // }
 
 // export default Home;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //     if (given > bill) {          
+    //         returnAmt = bill - given;
+
+    //         for(let i = 0; i < amounts.length; i++){
+
+    //             if (returnAmt >= amounts[i]){
+    //                 for (let j = 1; returnAmt >= amounts[i]; j++){
+    //                     returnAmt = returnAmt - amounts[i];
+    //                     currencies[j] = j;
+    //                 } 
+    //             }
+                
+    //             if (i === 5){                                       
+    //                 for (let i = 0; i<= 5; i++){
+    //                     console.log(currencies[i]);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
